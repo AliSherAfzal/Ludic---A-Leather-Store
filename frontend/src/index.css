@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ==========================================
+   StrideX Design System
+   ========================================== */
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #111111;
+  --bg-secondary: #1B1B1B;
+  --surface: #242424;
+
+  /* Text */
+  --text-primary: #F5F3EF;
+  --text-secondary: #B5B5B5;
+
+  /* Borders */
+  --border: #353535;
+
+  /* Brand */
+  --accent: #C89B5D;
+  --accent-hover: #B37A42;
+  --leather: #8B5E3C;
+
+  /* Status */
+  --success: #3E6B48;
+  --error: #8C2F39;
+}
+
+/* ==========================================
+   Base Styles
+   ========================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Inter, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
