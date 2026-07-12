@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import stridexLogo from "../../assets/images/stridex.png";
+import { useCart } from "../../context/CartContext";
 import {
   Menu,
   X,
@@ -27,6 +28,7 @@ const iconButtonClass =
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   const closeMenu = () => setMobileMenuOpen(false);
 
@@ -87,10 +89,15 @@ const Navbar = () => {
 
           <Link
             to="/cart"
-            className={iconButtonClass}
-            aria-label="Cart"
+            className={`relative ${iconButtonClass}`}
+            aria-label={totalItems > 0 ? `Cart, ${totalItems} items` : "Cart"}
           >
             <ShoppingBag size={22} />
+            {totalItems > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--accent)] px-1 text-xs font-semibold text-[var(--bg-primary)]">
+                {totalItems}
+              </span>
+            )}
           </Link>
 
           <button

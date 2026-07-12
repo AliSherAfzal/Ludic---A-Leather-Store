@@ -2,10 +2,13 @@ import { ShoppingBag, Star } from "lucide-react";
 
 import Badge from "../../ui/Badge";
 import Button from "../../ui/Button";
+import { useCart } from "../../../context/CartContext";
 import QuantitySelector from "./QuantitySelector";
 import SizeSelector from "./SizeSelector";
 
 const ProductInfo = ({ product, description, stock }) => {
+  const { addToCart } = useCart();
+
   return (
     <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8">
       <div className="flex flex-wrap items-center gap-3">
@@ -47,7 +50,7 @@ const ProductInfo = ({ product, description, stock }) => {
       </div>
 
       <div className="mt-8">
-        <Button>
+        <Button onClick={() => addToCart(product)}>
           <span className="inline-flex items-center gap-2">
             <ShoppingBag size={18} />
             Add to Cart

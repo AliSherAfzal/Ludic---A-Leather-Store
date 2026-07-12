@@ -14,8 +14,7 @@ const currencyFormatter = new Intl.NumberFormat("en-US", {
 const formatCurrency = (amount) => currencyFormatter.format(amount);
 
 const Cart = () => {
-  const { cartItems } = useCart();
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const { cartItems, totalItems } = useCart();
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
