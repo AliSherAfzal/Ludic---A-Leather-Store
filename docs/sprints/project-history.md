@@ -1,8 +1,8 @@
 # StrideX Project History
 
-The StrideX project is developed using a sprint-based engineering workflow inspired by modern product teams.
+The StrideX project is developed using a sprint-based engineering workflow inspired by modern software product teams.
 
-Every sprint begins with a business requirement, followed by architecture and UX planning before implementation.
+Every feature begins with a business requirement and progresses through architecture, implementation, review, documentation, and version control before being considered complete.
 
 ---
 
@@ -11,292 +11,291 @@ Every sprint begins with a business requirement, followed by architecture and UX
 | Sprint | Feature | Status |
 |---------|---------|:------:|
 | Sprint 1 | Project Initialization | ✅ |
-| Sprint 2 | Express Backend & Health Endpoint | ✅ |
+| Sprint 2 | Backend Foundation | ✅ |
 | Sprint 3 | Configuration Management | ✅ |
 | Sprint 4 | Homepage | ✅ |
 | Sprint 5 | Product Catalog | ✅ |
 | Sprint 6 | Product Details | ✅ |
-| Sprint 7 | Shopping Cart Foundation | 🚧 |
-| Sprint 8 | Documentation System | 🚧 |
+| Sprint 7 | Shopping Cart | ✅ |
+| Sprint 8 | Documentation System | ✅ |
 
 ---
 
-# Sprint Details
+# Sprint History
 
 ---
 
-## Sprint 1
+# Sprint 1 — Project Initialization
 
-### Project Initialization
+## Business Goal
 
-**Business Goal**
+Establish the technical foundation for the StrideX project.
 
-Establish the foundation for the StrideX project.
+## Completed
 
-### Completed
-
-- Monorepo created
-- React + Vite initialized
+- Monorepo repository created
+- React + Vite frontend initialized
 - Express backend initialized
 - Tailwind CSS configured
-- Git repository initialized
+- Git repository configured
 
-### Architecture Decisions
+## Architecture Decisions
 
-- Monorepo structure
-- Modular Monolith architecture
-- React frontend
-- Express backend
+- Adopted a Monorepo repository structure
+- Selected a Modular Monolith architecture
+- React chosen for the frontend
+- Express selected for the backend
 
-**Status**
+## Outcome
 
-Completed
+A stable project foundation was established to support future feature development.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 2
+# Sprint 2 — Backend Foundation
 
-### Backend Foundation
+## Business Goal
 
-**Business Goal**
+Create a backend application capable of evolving into a production-ready REST API.
 
-Create a backend service that can be expanded into a production API.
+## Completed
 
-### Completed
-
-- Express server
+- Express application
 - app.js
 - server.js
 - Health endpoint
+- Server startup logging
 
-### Architecture Decisions
+## Architecture Decisions
 
-- Express application separated from server startup
-- Future-ready routing structure
+- Separated application configuration from server startup
+- Designed routing structure for future scalability
 
-**Status**
+## Outcome
 
-Completed
+A backend foundation was established for future API development.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 3
+# Sprint 3 — Configuration Management
 
-### Configuration Management
+## Business Goal
 
-**Business Goal**
+Prepare the application for environment-specific configuration.
 
-Centralize application configuration.
+## Completed
 
-### Completed
+- Configuration strategy
+- Environment variable planning
+- `.env` architecture
+- Future deployment configuration planning
 
-- Configuration planning
-- Environment variable strategy
-- .env planning
-- Configuration architecture
-
-### Architecture Decisions
+## Architecture Decisions
 
 - Configuration separated from application logic
-- Future cloud deployment support
+- Environment-driven configuration adopted
 
-**Status**
+## Outcome
 
-Completed
+The project is prepared for cloud deployment without modifying application code.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 4
+# Sprint 4 — Homepage
 
-### Homepage
+## Business Goal
 
-**Business Goal**
+Create the first customer-facing experience while establishing the StrideX visual identity.
 
-Build the first customer-facing experience.
+## Completed
 
-### Completed
-
-- Luxury landing page
+- Luxury homepage
 - Responsive navigation
 - Hero section
+- Footer
+- Global layout
 - Brand styling
 
-### Architecture Decisions
+## Architecture Decisions
 
-- Reusable layout
-- Shared Navbar/Footer
-- Design System introduced
+- Introduced reusable layouts
+- Shared Navbar and Footer components
+- Established the initial design system
 
-**Status**
+## Outcome
 
-Completed
+The application now has a premium landing experience consistent with the StrideX brand.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 5
+# Sprint 5 — Product Catalog
 
-### Product Catalog
+## Business Goal
 
-**Business Goal**
+Allow customers to browse available leather footwear.
 
-Allow customers to browse products.
-
-### Completed
+## Completed
 
 - Product Grid
-- Product Card
+- Product Cards
 - Search
-- Filters
+- Category filters
 - Sorting
 - Pagination
 - Mock product data
 
-### Architecture Decisions
+## Architecture Decisions
 
-- Grid separated from Product Card
-- Mock data abstraction
-- Reusable product components
+- Product Grid separated from Product Card
+- Reusable product components introduced
+- Frontend developed independently using mock data
 
-**Status**
+## Outcome
 
-Completed
+Customers can browse products while backend development continues independently.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 6
+# Sprint 6 — Product Details
 
-### Product Details
+## Business Goal
 
-**Business Goal**
+Provide customers with sufficient information to make purchasing decisions.
 
-Help customers make purchasing decisions.
-
-### Completed
+## Completed
 
 - Product gallery
 - Product information
-- Specifications
+- Product specifications
 - Size selection
 - Quantity selector
-- Related layout
+- Related product layout
 
-### Architecture Decisions
+## Architecture Decisions
 
-- Component separation
-- Future API compatibility
+- Product Details decomposed into reusable components
+- Designed for future API integration without UI redesign
 
-**Status**
+## Outcome
 
-Completed
+Customers can inspect premium products before adding them to their cart.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 7
+# Sprint 7 — Shopping Cart
 
-### Shopping Cart Foundation
+## Business Goal
 
-**Business Goal**
+Enable customers to build and manage a shopping cart before checkout.
 
-Prepare the application for purchasing.
+## Completed
 
-### Completed
-
-- Cart page
-- Cart layout
-- Global Cart Context
-- Cart Provider
-- Context API integration
-- Cart item rendering
-- Quantity management
-- Dynamic subtotal
+- Shopping Cart page
+- Responsive cart layout
+- Global CartContext
+- Add to Cart integration
+- Dynamic quantity management
+- Remove item functionality
 - Dynamic order summary
-- Luxury empty state
-
-### Architecture Decisions
-
-- Global state management using Context API
-- Cart logic isolated from UI
-- Future backend integration ready
-
-**Status**
-
-Shopping Cart Complete
-
-### Phase 3
-
-Completed
-
-- Cart item rendering
-- Quantity management
-- Dynamic subtotal
-- Dynamic order summary
-- Luxury empty state
-
-### Phase 4
-
-Completed
-
-- Product Details integrated with CartContext
 - Navbar cart badge
-- Shared total item calculations
-- Application-wide cart synchronization
-
-### Phase 5
-
-Completed
-
-- Cart persistence
+- Shopping cart persistence using localStorage
 - Automatic cart restoration
-- Storage validation
-- Graceful recovery
+- Storage validation and graceful recovery
+
+## Architecture Decisions
+
+- React Context API adopted for global cart state
+- Cart persistence encapsulated inside CartContext
+- Navbar and Cart consume a shared source of truth
+- UI components remain independent of persistence implementation
+
+## Outcome
+
+Customers can:
+
+- Browse products
+- View product details
+- Add products to their cart
+- Modify quantities
+- Remove products
+- Refresh the browser without losing their shopping cart
+
+The application now provides a complete client-side shopping experience.
+
+**Status:** ✅ Completed
 
 ---
 
-## Sprint 8
+# Sprint 8 — Documentation System
 
-### Documentation System
+## Business Goal
 
-**Business Goal**
+Establish professional engineering documentation that evolves alongside the project.
 
-Introduce professional engineering documentation.
-
-### Completed
+## Completed
 
 - Root README
 - Engineering Handbook
-- Documentation architecture
-- Sprint history
+- Project History
+- CHANGELOG
+- Architecture Decision Records (ADR-001 to ADR-005)
 
-### Architecture Decisions
+## Architecture Decisions
 
-- Documentation-first workflow
-- Engineering handbook
-- Structured documentation hierarchy
+- Documentation-first engineering workflow adopted
+- Project showcase separated from engineering documentation
+- Architecture Decision Records introduced
+- Sprint history established
+- Standardized documentation structure defined
 
-**Status**
+## Outcome
 
-In Progress
+StrideX now follows a professional documentation workflow similar to modern software engineering teams.
+
+**Status:** ✅ Completed
+
+---
+
+# Engineering Milestones
+
+| Milestone | Status |
+|------------|:------:|
+| Project Foundation | ✅ |
+| Frontend MVP | ✅ |
+| Backend Foundation | ✅ |
+| Shopping Experience | ✅ |
+| Documentation System | ✅ |
+| Authentication | ⏳ |
+| Checkout | ⏳ |
+| Order Management | ⏳ |
+| Admin Dashboard | ⏳ |
+| DevOps Pipeline | ⏳ |
+| Cloud Deployment | ⏳ |
 
 ---
 
 # Current Project Status
 
-## Frontend
-
-🟢 Active Development
-
-## Backend
-
-🟢 Foundation Complete
-
-## DevOps
-
-🟡 Planning Phase
-
-## Documentation
-
-🟢 Active Development
+| Area | Status |
+|------|:------:|
+| Frontend | 🟢 Active Development |
+| Backend | 🟢 Foundation Complete |
+| Documentation | 🟢 Foundation Complete |
+| DevOps | 🟡 Planning |
+| Deployment | ⚪ Not Started |
 
 ---
 
-_Last Updated: Sprint 8_
+_Last Updated: Sprint 9 (Shopping Cart Complete)_
