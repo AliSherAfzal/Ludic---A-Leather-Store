@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
+import Cart from "../pages/Cart";
 import Home from "../pages/Home";
 import ProductDetails from "../pages/ProductDetails";
 import Products from "../pages/Products";
@@ -11,6 +12,7 @@ const AppRouter = () => {
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetails />} />
         </Routes>

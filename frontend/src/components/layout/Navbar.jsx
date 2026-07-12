@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import stridexLogo from "../../assets/images/stridex.png";
 import {
   Menu,
   X,
@@ -47,11 +48,12 @@ const Navbar = () => {
           </button>
 
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-3xl font-bold tracking-widest text-[var(--accent)]"
-          >
-            StrideX
+          <Link to="/" className="flex items-center">
+            <img
+              src={stridexLogo}
+              alt="StrideX"
+              className="h-16 w-auto"
+            />
           </Link>
 
         </div>
@@ -83,13 +85,13 @@ const Navbar = () => {
             <Search size={22} />
           </button>
 
-          <button
-            type="button"
+          <Link
+            to="/cart"
             className={iconButtonClass}
             aria-label="Cart"
           >
             <ShoppingBag size={22} />
-          </button>
+          </Link>
 
           <button
             type="button"
@@ -106,8 +108,8 @@ const Navbar = () => {
       {/* Overlay */}
       <div
         className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 ${mobileMenuOpen
-            ? "visible opacity-100"
-            : "invisible opacity-0"
+          ? "visible opacity-100"
+          : "invisible opacity-0"
           }`}
         onClick={closeMenu}
       />
@@ -115,8 +117,8 @@ const Navbar = () => {
       {/* Mobile Drawer */}
       <aside
         className={`fixed left-0 top-0 z-50 flex h-screen w-72 flex-col bg-[var(--bg-secondary)] p-6 shadow-2xl transition-transform duration-300 ${mobileMenuOpen
-            ? "translate-x-0"
-            : "-translate-x-full"
+          ? "translate-x-0"
+          : "-translate-x-full"
           }`}
       >
 
@@ -126,9 +128,13 @@ const Navbar = () => {
           <Link
             to="/"
             onClick={closeMenu}
-            className="text-2xl font-bold tracking-widest text-[var(--accent)]"
+            className="flex items-center"
           >
-            StrideX
+            <img
+              src={stridexLogo}
+              alt="StrideX"
+              className="h-12 w-auto"
+            />
           </Link>
 
           <button
