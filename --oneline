@@ -1,0 +1,129 @@
+[33mcommit f582cd84bd8ed20295b57dfff8b7a842c8269590[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 3e9c258 d7321fe
+Author: Ali Sher Afzal <143379133+AliSherAfzal@users.noreply.github.com>
+Date:   Mon Jul 13 03:43:00 2026 +0500
+
+    Merge pull request for feat(cart): integrate shopping cart across the application
+    
+    feat(cart): integrate shopping cart across the application
+
+[33mcommit d7321fec399da0726e4fc30ba09026e0aadefe2f[m[33m ([m[1;31morigin/feature/integrate-cart[m[33m)[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 03:41:25 2026 +0500
+
+    feat(cart): integrate shopping cart across the application
+
+[33mcommit 3e9c25842622b1b4f0534f14c507eac559172e90[m
+Merge: 9172124 6130d59
+Author: Ali Sher Afzal <143379133+AliSherAfzal@users.noreply.github.com>
+Date:   Mon Jul 13 03:30:41 2026 +0500
+
+    Merge pull request for feature cart experience : render cart items and dynamic order summary
+    
+    feat(cart): render cart items and dynamic order summary
+
+[33mcommit 6130d596bde493977a0a830653934df573187338[m[33m ([m[1;31morigin/feature/cart-experience[m[33m)[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 03:28:49 2026 +0500
+
+    feat(cart): render cart items and dynamic order summary
+
+[33mcommit 9172124a556569ffd426997cde3b839e0055335f[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 03:09:32 2026 +0500
+
+    feat(docs): Added architecture design docs
+
+[33mcommit a9294cd89f46cdb4d08d9b979100ba3334ead687[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 02:47:21 2026 +0500
+
+    docs(readme): create project overview in root README
+
+[33mcommit 024dd1736dcb0427a70697ef4f00310507bf599f[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 02:45:49 2026 +0500
+
+    docs(readme): create project overview in root README
+
+[33mcommit 31141859cdd166ea1282f94a74200db2da884f1c[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 02:32:15 2026 +0500
+
+    docs(readme): create project overview and engineering foundation
+
+[33mcommit e8aab5e110792e64999e87cb6c2107255ba905ab[m
+Merge: 43ab7a1 0c2edee
+Author: Ali Sher Afzal <143379133+AliSherAfzal@users.noreply.github.com>
+Date:   Mon Jul 13 02:02:06 2026 +0500
+
+    Merge pull request #2 from AliSherAfzal/feature/cart-context
+    
+    feat(cart): implement global cart context
+
+[33mcommit 0c2edee96b7118fb26d8bcd6d769305a2a846542[m[33m ([m[1;31morigin/feature/cart-context[m[33m)[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 01:55:12 2026 +0500
+
+    feat(cart): implement global cart context
+
+[33mcommit 43ab7a10fc84b1ba6e9d414834e191f74335bec3[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 00:54:35 2026 +0500
+
+    feat: Changed the logo
+
+[33mcommit da99c308cfba70c08343516874f162f27997150d[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 00:51:12 2026 +0500
+
+    feat(cart): scaffold shopping cart page and layout
+
+[33mcommit 9830ec2630a9c7645bf630017aa1f182531f2905[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Mon Jul 13 00:34:08 2026 +0500
+
+    feat: implement Product Details page
+
+[33mcommit 79cf79789585752c3c8401a562abbc98eaaf5158[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Sun Jul 12 16:30:26 2026 +0500
+
+    feat(frontend): implement responsive product catalog page with reusable components
+
+[33mcommit 3c1975ecded29fc262e14d108069bf8fa5f943d1[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Sun Jul 12 06:56:08 2026 +0500
+
+    feat(products): add client-side sorting and improve toolbar interactions
+
+[33mcommit 592b27233a3a8397d5d84ddf5512957a4ba3bdf7[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Sun Jul 12 06:03:52 2026 +0500
+
+    feat(products): scaffold product catalog page with reusable components
+
+[33mcommit 623f295085017606c3bda903dbfc39d99b4be8da[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Sun Jul 12 05:22:17 2026 +0500
+
+    feat(backend): initialize Express server and health endpoint
+
+[33mcommit ef67c89f55310a844939b688027eb26a363db9af[m
+Merge: 099d21c 6929bb4
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Sun Jul 12 03:40:32 2026 +0500
+
+    Merge branch 'main' of github.com:AliSherAfzal/Ludic---A-Leather-Store
+
+[33mcommit 099d21c91f5d041ac076babfb873d5ec549dd121[m
+Author: AliSherAfzal <alisherafzal87@gmail.com>
+Date:   Sun Jul 12 03:31:23 2026 +0500
+
+    feat(frontend): implement homepage layout and project architecture
+
+[33mcommit 6929bb490bf8b1539f3a97daf1a52b888838dae4[m
+Author: Ali Sher Afzal <143379133+AliSherAfzal@users.noreply.github.com>
+Date:   Fri Jun 26 01:40:22 2026 +0500
+
+    Initial commit

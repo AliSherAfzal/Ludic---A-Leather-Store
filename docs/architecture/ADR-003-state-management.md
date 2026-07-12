@@ -7,6 +7,9 @@
 # Decision
 
 Global application state will initially use the React Context API.
+Persistence Strategy
+
+Shopping cart persistence is encapsulated inside CartContext through a dedicated persistence layer. UI components remain unaware of storage implementation details.
 
 ---
 

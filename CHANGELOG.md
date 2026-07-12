@@ -23,6 +23,10 @@ This project follows a sprint-based development workflow and uses semantic versi
 - Dynamic cart badge in navigation
 - Shared totalItems derived from CartContext
 - Automatic badge synchronization across the application
+- Shopping cart persistence using localStorage
+- Automatic cart restoration on page refresh
+- Automatic cleanup of persisted cart when emptied
+- Graceful recovery from invalid persisted cart data
 
 ### Changed
 

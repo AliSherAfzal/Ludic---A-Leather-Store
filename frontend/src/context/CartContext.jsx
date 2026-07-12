@@ -1,9 +1,44 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
+const CART_STORAGE_KEY = "stridex-cart";
 const CartContext = createContext(undefined);
 
+const removeStoredCart = () => {
+  try {
+    window.localStorage.removeItem(CART_STORAGE_KEY);
+  } catch {
+    // Storage can be unavailable while the in-memory cart remains usable.
+  }
+};
+
+const getInitialCartItems = () => {
+  if (typeof window === "undefined") {
+    return [];
+  }
+
+  try {
+    const storedCart = window.localStorage.getItem(CART_STORAGE_KEY);
+
+    if (!storedCart) {
+      return [];
+    }
+
+    const parsedCart = JSON.parse(storedCart);
+
+    if (Array.isArray(parsedCart)) {
+      return parsedCart;
+    }
+  } catch {
+    removeStoredCart();
+    return [];
+  }
+
+  removeStoredCart();
+  return [];
+};
+
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(getInitialCartItems);
   const totalItems = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -46,6 +81,23 @@ export const CartProvider = ({ children }) => {
   const clearCart = () => {
     setCartItems([]);
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    if (cartItems.length === 0) {
+      removeStoredCart();
+      return;
+    }
+
+    try {
+      window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch {
+      // Storage can be unavailable while the in-memory cart remains usable.
+    }
+  }, [cartItems]);
 
   const value = useMemo(
     () => ({
