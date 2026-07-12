@@ -14,6 +14,11 @@ This project follows a sprint-based development workflow and uses semantic versi
 - Documentation system
 - Engineering handbook
 - Sprint history
+- Dynamic shopping cart rendering
+- Quantity controls
+- Remove item functionality
+- Order summary calculations
+- Luxury empty cart experience
 
 ### Changed
 
