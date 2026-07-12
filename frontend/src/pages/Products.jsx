@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import ProductToolbar from "../components/product/ProductToolbar";
 import FilterSidebar from "../components/product/FilterSidebar";
@@ -11,6 +11,12 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortOption, setSortOption] = useState("featured");
+  const [currentPage, setCurrentPage] = useState(1);
+
+const productsPerPage = 6;
+useEffect(() => {
+  setCurrentPage(1);
+}, [searchTerm, selectedCategory, sortOption]);
 
   const filteredProducts = useMemo(() => {
   let result = [...products].filter((product) => {
@@ -45,6 +51,19 @@ const Products = () => {
   return result;
 }, [searchTerm, selectedCategory, sortOption]);
 
+const totalPages = Math.ceil(
+  filteredProducts.length / productsPerPage
+);
+
+const paginatedProducts = useMemo(() => {
+  const start = (currentPage - 1) * productsPerPage;
+
+  return filteredProducts.slice(
+    start,
+    start + productsPerPage
+  );
+}, [filteredProducts, currentPage]);
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-10">
 
@@ -73,12 +92,16 @@ const Products = () => {
         />
 
         <ProductGrid
-          products={filteredProducts}
-        />
+    products={paginatedProducts}
+/>
 
       </div>
 
-      <Pagination />
+      <Pagination
+    currentPage={currentPage}
+    totalPages={totalPages}
+    onPageChange={setCurrentPage}
+/>
 
     </section>
   );
