@@ -25,3 +25,6 @@ Context provides sufficient capability for:
 # Future
 
 If application complexity increases significantly, a dedicated state management library may be introduced.
+Current Context Usage
+
+- Shopping Cart

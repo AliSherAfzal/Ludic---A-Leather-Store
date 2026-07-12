@@ -19,6 +19,10 @@ This project follows a sprint-based development workflow and uses semantic versi
 - Remove item functionality
 - Order summary calculations
 - Luxury empty cart experience
+- Product Details integrated with Shopping Cart
+- Dynamic cart badge in navigation
+- Shared totalItems derived from CartContext
+- Automatic badge synchronization across the application
 
 ### Changed
 
