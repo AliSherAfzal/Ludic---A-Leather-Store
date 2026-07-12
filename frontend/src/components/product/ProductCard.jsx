@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Badge from "../ui/Badge";
 
 const ProductCard = ({ product }) => {
@@ -36,9 +38,12 @@ const ProductCard = ({ product }) => {
           ${product.price}
         </p>
 
-        <button className="mt-4 w-full rounded-xl border border-[var(--accent)] py-3 transition-colors duration-300 hover:bg-[var(--accent)] hover:text-[var(--bg-primary)]">
+        <Link
+          to={`/products/${product.id}`}
+          className="mt-4 block w-full rounded-xl border border-[var(--accent)] py-3 text-center transition-colors duration-300 hover:bg-[var(--accent)] hover:text-[var(--bg-primary)]"
+        >
           View Details
-        </button>
+        </Link>
 
       </div>
 

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 import ProductToolbar from "../components/product/ProductToolbar";
 import FilterSidebar from "../components/product/FilterSidebar";
@@ -13,60 +13,71 @@ const Products = () => {
   const [sortOption, setSortOption] = useState("featured");
   const [currentPage, setCurrentPage] = useState(1);
 
-const productsPerPage = 6;
-useEffect(() => {
-  setCurrentPage(1);
-}, [searchTerm, selectedCategory, sortOption]);
+  const productsPerPage = 6;
+
+  const handleSearchChange = (value) => {
+    setSearchTerm(value);
+    setCurrentPage(1);
+  };
+
+  const handleCategoryChange = (value) => {
+    setSelectedCategory(value);
+    setCurrentPage(1);
+  };
+
+  const handleSortChange = (value) => {
+    setSortOption(value);
+    setCurrentPage(1);
+  };
 
   const filteredProducts = useMemo(() => {
-  let result = [...products].filter((product) => {
-    const matchesSearch = product.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+    let result = [...products].filter((product) => {
+      const matchesSearch = product.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
 
-    const matchesCategory =
-      selectedCategory === "All" ||
-      product.category === selectedCategory;
+      const matchesCategory =
+        selectedCategory === "All" ||
+        product.category === selectedCategory;
 
-    return matchesSearch && matchesCategory;
-  });
+      return matchesSearch && matchesCategory;
+    });
 
-  switch (sortOption) {
-    case "price-low":
-      result.sort((a, b) => a.price - b.price);
-      break;
+    switch (sortOption) {
+      case "price-low":
+        result.sort((a, b) => a.price - b.price);
+        break;
 
-    case "price-high":
-      result.sort((a, b) => b.price - a.price);
-      break;
+      case "price-high":
+        result.sort((a, b) => b.price - a.price);
+        break;
 
-    case "rating":
-      result.sort((a, b) => b.rating - a.rating);
-      break;
+      case "rating":
+        result.sort((a, b) => b.rating - a.rating);
+        break;
 
-    default:
-      break;
-  }
+      default:
+        break;
+    }
 
-  return result;
-}, [searchTerm, selectedCategory, sortOption]);
+    return result;
+  }, [searchTerm, selectedCategory, sortOption]);
 
-const totalPages = Math.ceil(
-  filteredProducts.length / productsPerPage
-);
-
-const paginatedProducts = useMemo(() => {
-  const start = (currentPage - 1) * productsPerPage;
-
-  return filteredProducts.slice(
-    start,
-    start + productsPerPage
+  const totalPages = Math.ceil(
+    filteredProducts.length / productsPerPage
   );
-}, [filteredProducts, currentPage]);
+
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * productsPerPage;
+
+    return filteredProducts.slice(
+      start,
+      start + productsPerPage
+    );
+  }, [filteredProducts, currentPage]);
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-10">
-
       <header className="mb-10">
         <h1 className="text-4xl font-bold">
           Shop Collection
@@ -79,30 +90,25 @@ const paginatedProducts = useMemo(() => {
 
       <ProductToolbar
         searchTerm={searchTerm}
-        onSearchChange={setSearchTerm}
+        onSearchChange={handleSearchChange}
         sortOption={sortOption}
-        onSortChange={setSortOption}
+        onSortChange={handleSortChange}
       />
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[280px_1fr]">
-
         <FilterSidebar
           selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
+          onCategoryChange={handleCategoryChange}
         />
 
-        <ProductGrid
-    products={paginatedProducts}
-/>
-
+        <ProductGrid products={paginatedProducts} />
       </div>
 
       <Pagination
-    currentPage={currentPage}
-    totalPages={totalPages}
-    onPageChange={setCurrentPage}
-/>
-
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </section>
   );
 };
