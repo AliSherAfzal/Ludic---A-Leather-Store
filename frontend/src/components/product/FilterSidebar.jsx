@@ -1,22 +1,40 @@
-const FilterSidebar = () => {
+const categories = [
+  "All",
+  "Men",
+  "Formal",
+  "Casual",
+];
+
+const FilterSidebar = ({
+  selectedCategory,
+  onCategoryChange,
+}) => {
   return (
     <aside className="rounded-2xl bg-[var(--surface)] p-6">
 
       <h2 className="mb-6 text-xl font-semibold">
-        Filters
+        Categories
       </h2>
 
-      <ul className="space-y-4">
+      <div className="space-y-3">
 
-        <li>Men</li>
+        {categories.map((category) => (
 
-        <li>Women</li>
+          <button
+            key={category}
+            onClick={() => onCategoryChange(category)}
+            className={`block w-full rounded-xl px-4 py-3 text-left transition-all duration-300 ${
+              selectedCategory === category
+                ? "bg-[var(--accent)] text-[var(--bg-primary)]"
+                : "hover:bg-[var(--bg-secondary)]"
+            }`}
+          >
+            {category}
+          </button>
 
-        <li>Formal</li>
+        ))}
 
-        <li>Casual</li>
-
-      </ul>
+      </div>
 
     </aside>
   );
